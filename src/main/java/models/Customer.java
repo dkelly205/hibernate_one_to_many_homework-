@@ -8,16 +8,16 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String address;
-    private String telephoneNumber;
+    private String phoneNumber;
     private Set<Order> orders;
 
     public Customer(){}
 
-    public Customer(String firstName, String lastName, String address, String telephoneNumber){
+    public Customer(String firstName, String lastName, String address, String phoneNumber){
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
-        this.telephoneNumber = telephoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     public int getId() {
@@ -52,12 +52,12 @@ public class Customer {
         this.address = address;
     }
 
-    public String getTelephoneNumber() {
-        return telephoneNumber;
+    public String getphoneNumber() {
+        return phoneNumber;
     }
 
-    public void setTelephoneNumber(String telephoneNumber) {
-        this.telephoneNumber = telephoneNumber;
+    public void setphoneNumber(String telephoneNumber) {
+        this.phoneNumber = telephoneNumber;
     }
 
 

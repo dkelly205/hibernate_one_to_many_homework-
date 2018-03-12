@@ -3,13 +3,14 @@ package models;
 public class Order {
 
     private int id;
-    private String order_number;
+    private String orderNumber;
     private Customer customer;
+
 
     public Order(){}
 
-    public Order(String order_number, Customer customer) {
-        this.order_number = order_number;
+    public Order(String orderNumber, Customer customer) {
+        this.orderNumber = orderNumber;
         this.customer = customer;
     }
 
@@ -21,12 +22,12 @@ public class Order {
         this.id = id;
     }
 
-    public String getOrder_number() {
-        return order_number;
+    public String getOrderNumber() {
+        return orderNumber;
     }
 
-    public void setOrder_number(String order_number) {
-        this.order_number = order_number;
+    public void setOrder_number(String orderNumber) {
+        this.orderNumber = orderNumber;
     }
 
     public Customer getCustomer() {
