@@ -79,6 +79,24 @@ public class DBHelper {
         }
     }
 
+    public static void deleteById(int id, String className){
+        session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            transaction = session.beginTransaction();
+            String hql = "delete from " + className + " where id = :id";
+            Query query = session.createQuery(hql);
+            query.setInteger("id", id);
+            query.executeUpdate();
+            transaction.commit();
+        }catch(HibernateException ex){
+            transaction.rollback();
+            ex.printStackTrace();
+        }finally{
+            session.close();
+        }
+
+    }
+
 
 
 
