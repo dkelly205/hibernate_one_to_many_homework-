@@ -9,11 +9,11 @@ public class DBHelper {
     private static Transaction transaction;
     private static Session session;
 
-    public static void save(Object object){
+    public static void saveOrUpdate(Object object){
         session = HibernateUtil.getSessionFactory().openSession();
         try{
             transaction = session.beginTransaction();
-            session.save(object);
+            session.saveOrUpdate(object);
             transaction.commit();
         }catch (HibernateException e) {
             transaction.rollback();
@@ -22,4 +22,23 @@ public class DBHelper {
             session.close();
         }
     }
+
+    public static void delete(Object object){
+        session = HibernateUtil.getSessionFactory().openSession();
+
+        try{
+            transaction = session.beginTransaction();
+            session.delete(object);
+            transaction.commit();
+        }catch(HibernateException ex){
+            transaction.rollback();
+            ex.printStackTrace();
+        }finally{
+            session.close();
+        }
+    }
+
+
+
+
 }
