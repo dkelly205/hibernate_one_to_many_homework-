@@ -3,3 +3,23 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
+<hibernate-mapping>
+    <class name="Customer" table="customers">
+        <id name = "id" type="int" column="id">
+            <generator class ="identity"/>
+        </id>
+
+        <property name="firstName" type="String" column="first_name"/>
+        <property name="lastName" type="String" column="last_name"/>
+        <property name="address" type="String" column="address"/>
+        <property name="phoneNumber" type="String" column="phone_number"/>
+
+        <set name="orders" inverse="true" cascade="all" lazy="true">
+
+            <key>
+                <column name="order_id" not-null="true"/>
+            </key>
+            <one-to-many class="models.Order"/>
+        </set>
+    </class>
+</hibernate-mapping>
