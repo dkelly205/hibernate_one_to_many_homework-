@@ -52,13 +52,19 @@ public class Customer {
         this.address = address;
     }
 
-    public String getphoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setphoneNumber(String telephoneNumber) {
+    public void setPhoneNumber(String telephoneNumber) {
         this.phoneNumber = telephoneNumber;
     }
 
+    public Set<Order> getOrders() {
+        return orders;
+    }
 
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
+    }
 }

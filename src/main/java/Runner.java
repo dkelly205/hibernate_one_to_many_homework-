@@ -6,7 +6,7 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        Customer customer1 = new Customer("Bruce", "Wayne", "101 Gotham Drive", "0141111111");
+        Customer customer1 = new Customer("Bruce", "Wayne", "Gotham", "0141111111");
         DBHelper.saveOrUpdate(customer1);
 
         Customer customer2 = new Customer("Clark", "Kent", "Krypton", "01411100000");
@@ -18,4 +18,5 @@ public class Runner {
         Order order2 = new Order("Kent102", customer2);
         DBHelper.saveOrUpdate(order2);
     }
+
 }
