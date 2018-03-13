@@ -94,7 +94,24 @@ public class DBHelper {
         }finally{
             session.close();
         }
+    }
 
+
+    public static void findById(int id, String className){
+        session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            transaction = session.beginTransaction();
+            String hql = "from " + className + " where id = :id";
+            Query query = session.createQuery(hql);
+            query.setInteger("id", id);
+            query.uniqueResult();
+            transaction.commit();
+        }catch(HibernateException ex){
+            transaction.rollback();
+            ex.printStackTrace();
+        }finally{
+            session.close();
+        }
     }
 
 
