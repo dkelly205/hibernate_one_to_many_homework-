@@ -2,6 +2,7 @@ package models;
 
 public class Order {
 
+
     private int id;
     private String orderNumber;
     private Customer customer;
@@ -26,7 +27,7 @@ public class Order {
         return orderNumber;
     }
 
-    public void setOrder_number(String orderNumber) {
+    public void setOrderNumber(String orderNumber) {
         this.orderNumber = orderNumber;
     }
 
@@ -37,6 +38,8 @@ public class Order {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+
 }
 
 

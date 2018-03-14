@@ -1,6 +1,9 @@
 import db.DBHelper;
 import models.Customer;
-import org.hibernate.criterion.Order;
+import models.Order;
+
+import java.util.List;
+import java.util.Set;
 
 public class Runner {
 
@@ -17,6 +20,15 @@ public class Runner {
 
         Order order2 = new Order("Kent102", customer2);
         DBHelper.saveOrUpdate(order2);
-    }
 
+        Order order3 = new Order("Kent100", customer2);
+        DBHelper.saveOrUpdate(order3);
+
+        Customer foundCustomer = DBHelper.findById(customer2.getId(), "Customer");
+
+        List<Order> ordersOfCustomer1 = DBHelper.getOrders(customer1.getId());
+
+        List<Order> ordersOfCustomer2 = DBHelper.getOrders(customer2.getId());
+
+    }
 }
